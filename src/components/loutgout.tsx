@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
-const loutgout = () => {
-  return (
-    <div>loutgout</div>
-  )
-}
+const Loutgout = () => {
+  return <div>loutgout</div>;
+};
 
-export default loutgout
+export default Loutgout;
