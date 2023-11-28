@@ -13,10 +13,9 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <div className="h-screen w-screen relative">
-          <Navbar />
-          <Footer />
-        </div>
+        <Navbar />
+        <Footer />
+
         <Routes>
           <Route path="/" element={<Landing />} />
           <Route path="/about" element={<About />} />
