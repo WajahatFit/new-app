@@ -11,7 +11,10 @@ import Auth from "./pages/Auth";
 
 function App() {
   return (
-    <>
+    <div
+      className=" h-screen
+      bg-gradient-to-r from-gray-100 to-gray-300"
+    >
       <BrowserRouter>
         <Navbar />
         <Footer />
@@ -25,7 +28,7 @@ function App() {
           <Route path="/shop" element={<Shop />} />
         </Routes>
       </BrowserRouter>
-    </>
+    </div>
   );
 }
 
