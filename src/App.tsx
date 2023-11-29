@@ -14,7 +14,7 @@ function App() {
   return (
     <div
       className="
-      h-screen bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900"
+      h-screen bg-gradient-to-b from-gray-900 via-purple-900 to-violet-600"
     >
       <BrowserRouter>
         <Navbar />
