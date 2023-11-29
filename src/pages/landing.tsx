@@ -8,11 +8,10 @@ const Landing = () => {
         <span className="font-bold bg-clip-text text-transparent bg-gradient-to-l from-gray-100 to-gray-400">
           Your Ultimate E-commerce Destination
         </span>
-        <div className="w-5/6 text-center pb-14 pt-14 text-2xl tracking-wide">
+        <div className="w-4/5 text-center pb-14 pt-14 text-2xl tracking-wide">
           <p className="bg-clip-text text-transparent bg-gradient-to-r bg-gradient-to-r from-white to-gray-400">
-            We offer world's top quality brands by prices you have never
-            imagined. Yes it is genuine and it is available for everyone, no
-            restrictions or limitations buy as you please.
+            At Ecommerce, we are not just selling products we're crafting an
+            immersive shopping experience tailored to your needs.
           </p>
         </div>
         <NavLink to="/products">
