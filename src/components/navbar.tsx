@@ -20,7 +20,7 @@ const Navbar = () => {
       </ul>
       <ul className="w-1/6 flex justify-around items-center">
         <li>
-          <NavLink to="/auth">login</NavLink>
+          <NavLink to="/login">login</NavLink>
         </li>
         <li>
           <NavLink to="/profile">Profile</NavLink>

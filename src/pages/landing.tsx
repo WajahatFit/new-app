@@ -2,8 +2,13 @@ import React from "react";
 
 const Landing = () => {
   return (
-    <div className="h-screen bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900">
-      landing
+    <div className="">
+      <h1
+        className="text-center text-white text-lg
+      "
+      >
+        Get your quality and quantity in all one place.
+      </h1>
     </div>
   );
 };
