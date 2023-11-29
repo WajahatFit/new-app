@@ -12,8 +12,8 @@ import Auth from "./pages/Auth";
 function App() {
   return (
     <div
-      className=" h-screen
-      bg-gradient-to-r from-gray-100 to-gray-300"
+      className="
+      h-screen bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900"
     >
       <BrowserRouter>
         <Navbar />
