@@ -1,5 +1,6 @@
 import Navbar from "./components/Navbar";
 import Landing from "./pages/Landing";
+import Footer from "./components/Footer";
 import Profile from "./pages/Profile";
 import About from "./pages/About";
 import Shop from "./pages/Shop";
@@ -13,7 +14,7 @@ function App() {
   return (
     <div
       className="
-      h-screen bg-gradient-to-b from-gray-900 via-purple-900 to-violet-600 mb-0"
+      h-screen bg-gradient-to-b from-gray-900 via-purple-900 to-violet-600"
     >
       <BrowserRouter>
         <Navbar />
@@ -27,6 +28,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/shop" element={<Shop />} />
         </Routes>
+        <Footer />
       </BrowserRouter>
     </div>
   );
