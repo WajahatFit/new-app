@@ -1,2 +1,5 @@
 /* src/index.css */
 @import "./styles/tailwind.css";
+body {
+  background-color: (rgb(17, 24, 39), rgb(88, 28, 135), rgb(124, 58, 237));
+}

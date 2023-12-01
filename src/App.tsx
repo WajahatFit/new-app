@@ -14,13 +14,15 @@ function App() {
   return (
     <div
       className="
-      h-screen bg-gradient-to-b from-gray-900 via-purple-900 to-violet-600"
+      relative flex flex-col h-screen bg-gradient-to-b from-gray-900 via-purple-900 to-violet-600"
     >
       <BrowserRouter>
         <Navbar />
 
+        <Footer />
+
         <Routes>
-          <Route path="/" element={<Landing />} />
+          <Route path="/Home" element={<Landing />} />
           <Route path="/about" element={<About />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/checkout" element={<Checkout />} />
@@ -28,7 +30,6 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/shop" element={<Shop />} />
         </Routes>
-        <Footer />
       </BrowserRouter>
     </div>
   );
