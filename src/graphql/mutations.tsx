@@ -1,11 +1,23 @@
-import {gql} from '@apollo/client';
-
+import { gql } from '@apollo/client';
 
 export const CREATE_PRODUCT = gql`
-    createProduct(name: String!, price: Float!, description: String): Product
-`
-
+  mutation CreateProduct($name: String!, $price: Float!, $description: String) {
+    createProduct(name: $name, price: $price, description: $description) {
+      id
+      name
+      price
+      description
+    }
+  }
+`;
 
 export const GET_PRODUCTS = gql`
-    products: [Product]
-`
+  query GetProducts {
+    products {
+      id
+      name
+      price
+      description
+    }
+  }
+`;
