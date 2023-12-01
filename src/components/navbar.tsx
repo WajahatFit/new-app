@@ -3,13 +3,13 @@ import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <div className="flex justify-between bg-gradient-to-b from-gray-900 to-gray-700 border-b-4 border-indigo-500 bg-gradient-to-r font-serif text-lg drop-shadow-xl rounded ">
+    <div className="flex justify-between bg-gradient-to-b from-gray-900 to-gray-700 border-b-4 border-violet-600 bg-gradient-to-r font-serif text-lg drop-shadow-xl rounded ">
       <ul className="w-1/4 flex justify-around px-2 py-4 cursor-pointer ">
         <li>
           <NavLink
             className={(element) =>
               element.isActive
-                ? "text-indigo-500 font-bold text-xl"
+                ? "text-violet-500 font-bold text-xl"
                 : "text-slate-300 text-xl hover:text-white"
             }
             to="/home"
@@ -21,7 +21,7 @@ const Navbar = () => {
           <NavLink
             className={(element) =>
               element.isActive
-                ? "text-indigo-500 font-bold text-xl"
+                ? "text-violet-500 font-bold text-xl"
                 : "text-slate-300 text-xl hover:text-white"
             }
             to="/shop"
@@ -33,7 +33,7 @@ const Navbar = () => {
           <NavLink
             className={(element) =>
               element.isActive
-                ? "text-indigo-500 font-bold text-xl"
+                ? "text-violet-500 font-bold text-xl"
                 : "text-slate-300 text-xl hover:text-white"
             }
             to="/about"
@@ -45,7 +45,7 @@ const Navbar = () => {
           <NavLink
             className={(element) =>
               element.isActive
-                ? "text-indigo-500 font-bold text-xl"
+                ? "text-violet-500 font-bold text-xl"
                 : "text-slate-300 text-xl hover:text-white"
             }
             to="/checkout"
@@ -59,7 +59,7 @@ const Navbar = () => {
           <NavLink
             className={(element) =>
               element.isActive
-                ? "text-indigo-500 font-bold text-xl"
+                ? "text-violet-500 font-bold text-xl"
                 : "text-slate-300 text-xl hover:text-white"
             }
             to="/login"
@@ -71,7 +71,7 @@ const Navbar = () => {
           <NavLink
             className={(element) =>
               element.isActive
-                ? "text-indigo-500 font-bold text-xl"
+                ? "text-violet-500 font-bold text-xl"
                 : "text-slate-300 text-xl hover:text-white"
             }
             to="/profile"
