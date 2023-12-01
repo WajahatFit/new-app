@@ -9,7 +9,7 @@ import Footer from "../components/Footer";
 
 const Landing = () => {
   return (
-    <div className="relative font-serif pt-24 space-y-40 h-screen bg-gradient-to-b from-gray-900 via-purple-900 to-violet-600">
+    <div className="relative font-serif pt-24 space-y-20 h-screen w-screen bg-gradient-to-b from-gray-900 via-purple-900 to-violet-600">
       <div className="flex flex-col items-center justify-between text-6xl tracking-wide ">
         <span className="font-bold bg-clip-text text-transparent bg-gradient-to-l from-gray-100 to-gray-400">
           Your Ultimate E-commerce Destination
@@ -27,15 +27,21 @@ const Landing = () => {
         </NavLink>
       </div>
 
-      <div className="w-4/5 rounded-xl mx-auto h-2/4 border p-8 bg-gradient-to-r from-gray-700 via-gray-900 to-black">
+      <div className="w-4/5  mx-auto h-2/6 border p-8 bg-gradient-to-r from-gray-700 via-gray-900 to-black">
         <img src={mainImg} alt="ecommerce web" className="w-full h-full" />
       </div>
 
-      <div>
-        <img src={netflix} alt="netflix" />
-        <img src={periscop} alt="periscop" />
-        <img src={paypal} alt="paypal" />
-        <img src={pedia} alt="takopedia" />
+      <div className="h-52 border border-black bg-gradient-to-l from-gray-200 to-gray-700">
+        <div className="w-5/6 mx-auto flex justify-around items-center h-full">
+          <img className="h-16" src={netflix} alt="netflix" />
+          <img className="h-16" src={periscop} alt="periscop" />
+          <img className="h-24" src={paypal} alt="paypal" />
+          <img
+            className="h-28 mix-blend-multiply"
+            src={pedia}
+            alt="takopedia"
+          />
+        </div>
       </div>
     </div>
   );
