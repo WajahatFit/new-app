@@ -7,7 +7,7 @@ import paypal from "../images/paypal-logo-png-2117.png";
 
 const Landing = () => {
   return (
-    <div className="font-serif h-screen w-screen bg-black-700 pt-20 flex flex-col justify-around pb-20">
+    <div className="font-serif h-screen w-screen pt-20 flex flex-col justify-around pb-20">
       <div className="flex flex-col items-center justify-between text-6xl tracking-wide">
         <span className="font-bold bg-clip-text text-transparent bg-gradient-to-l from-gray-100 to-gray-400">
           Your Ultimate E-commerce Destination
