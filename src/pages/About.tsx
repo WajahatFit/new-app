@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 const AboutPage = () => {
   return (
     <div className="h-full my-auto items-center pt-8 tracking-wide">
-      <div className="h-full shadow-lg rounded-md flex flex-col justify-betweens items-center space-y-12 pb-12">
+      <div className="shadow-lg rounded-md flex flex-col justify-betweens items-center space-y-12 pb-12">
         <h1 className="font-bold text-4xl bg-clip-text text-transparent bg-gradient-to-l from-gray-100 to-gray-400 text-center">
           About Us
         </h1>

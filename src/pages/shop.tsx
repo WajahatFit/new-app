@@ -1,7 +1,12 @@
 import React from "react";
+import ProductCard from "../components/ProductCard";
 
 const Shop = () => {
-  return <div>shop</div>;
+  return (
+    <div className="">
+      <ProductCard />
+    </div>
+  );
 };
 
 export default Shop;

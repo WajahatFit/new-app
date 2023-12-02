@@ -1,9 +1,10 @@
 import React from "react";
+import ProductCard from "./ProductCard";
 
 const product = () => {
   return (
-    <div className="">
-      <h1>product</h1>
+    <div className="flex">
+      <ProductCard />
     </div>
   );
 };
