@@ -1,8 +1,15 @@
 import React from 'react'
+import ProductForm from '../components/product';
 
 const shop = () => {
   return (
-    <div>shop</div>
+    <div>
+
+      <div>shop</div>
+      <ProductForm />
+    
+    </div>
+
   )
 }
 
