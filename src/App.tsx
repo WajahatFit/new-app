@@ -12,14 +12,9 @@ import Signup from "./pages/auth/Signup";
 
 const App = () => {
   return (
-    <div
-      className="
-      relative flex flex-col h-screen bg-gradient-to-b from-gray-900 via-purple-900 to-violet-600"
-    >
+    <div className="flex flex-col">
       <BrowserRouter>
         <Navbar />
-
-        <Footer />
 
         <Routes>
           <Route path="/Home" element={<Landing />} />
