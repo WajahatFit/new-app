@@ -1,7 +1,7 @@
 import React from "react";
 import ProductCard from "./ProductCard";
 
-const product = () => {
+const Product = () => {
   return (
     <div className="flex">
       <ProductCard />
@@ -9,4 +9,4 @@ const product = () => {
   );
 };
 
-export default product;
+export default Product;
