@@ -10,7 +10,7 @@ import "./App.css";
 import Login from "../src/pages/auth/Login";
 import Signup from "./pages/auth/Signup";
 
-function App() {
+const App = () => {
   return (
     <div
       className="
@@ -32,6 +32,6 @@ function App() {
       </BrowserRouter>
     </div>
   );
-}
+};
 
 export default App;
