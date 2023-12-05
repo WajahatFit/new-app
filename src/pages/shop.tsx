@@ -1,9 +1,20 @@
-import Footer from "../components/Footer";
 import ProductCard from "../components/ProductCard";
+import data from "../data/data";
 
 const Shop = () => {
+  const product = data.map((item) => {
+    return (
+      <ProductCard
+        key={item.id}
+        title={item.title}
+        image={`../images/${item.image}`}
+        price={item.price}
+      />
+    );
+  });
+
   return (
-    <div className="font-sans ">
+    <div className="flex flex-col items-end font-sans">
       <div className="text-gray-400 border w-full bg-gray-800 flex flex-col items-start pt-8 pb-8 px-6 space-y-8 justify-around shdow-xl">
         <h3 className="text-4xl font-bold tracking-wide">Explore Excellence</h3>
         <p className="text-xl w-2/4">
@@ -12,92 +23,9 @@ const Shop = () => {
           because quality matters.
         </p>
       </div>
-      <div className="w-full h-full flex flex-wrap items-center px-4 gap-4">
-        {" "}
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
+      <div className="flex flex-wrap w-3/4 border border-red-500 mt-16 mb-12 ">
+        {product ? product : <h1>No products available from Db</h1>}
       </div>
-      <Footer />
     </div>
   );
 };
