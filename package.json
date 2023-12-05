@@ -14,20 +14,30 @@
     "@types/react-dom": "^18.2.17",
     "autoprefixer": "^10.4.16",
 <<<<<<< HEAD
+<<<<<<< HEAD
     "axios": "^1.6.2",
 =======
     "graphql": "^16.8.1",
 >>>>>>> soufiane
+=======
+    "axios": "^1.6.2",
+    "graphql": "^16.8.1",
+>>>>>>> 74bcd26c0f243e1f0a78dc70258553c7fb139112
     "postcss": "^8.4.31",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-redux": "^8.1.3",
+<<<<<<< HEAD
 <<<<<<< HEAD
     "react-router": "^6.20.0",
     "react-router-dom": "^6.20.0",
 =======
     "react-router-dom": "^6.20.1",
 >>>>>>> soufiane
+=======
+    "react-router": "^6.20.0",
+    "react-router-dom": "^6.20.0",
+>>>>>>> 74bcd26c0f243e1f0a78dc70258553c7fb139112
     "react-scripts": "5.0.1",
     "tailwindcss": "^3.3.5",
     "typescript": "^4.9.5",
