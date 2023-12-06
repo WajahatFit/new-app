@@ -1,5 +1,16 @@
+<<<<<<< HEAD
 import ProductCard from "../components/ProductCard";
 import data from "../data/data";
+=======
+<<<<<<< HEAD
+
+import React from 'react'
+import ProductForm from '../components/productform';
+=======
+import React from "react";
+import ProductCard from "../components/ProductCard";
+>>>>>>> 74bcd26c0f243e1f0a78dc70258553c7fb139112
+>>>>>>> f70514ada8637e4d8f5ef4f011510ad232fc9728
 
 const Shop = () => {
   const product = data.map((item) => {
@@ -38,7 +49,13 @@ const Shop = () => {
         </div>
       </div>
     </div>
+<<<<<<< HEAD
+
+  )
+}
+=======
   );
 };
+>>>>>>> 74bcd26c0f243e1f0a78dc70258553c7fb139112
 
 export default Shop;

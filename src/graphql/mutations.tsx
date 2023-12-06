@@ -1,3 +1,4 @@
+
 import { gql } from '@apollo/client';
 
 export const CREATE_PRODUCT = gql`
@@ -20,4 +21,13 @@ export const GET_PRODUCTS = gql`
       description
     }
   }
+
 `;
+
+// export const getUser = gql`
+//   query getNumber1 {
+//     getUser($user: String!){
+//         currentUser
+//     }
+//   }
+
