@@ -7,7 +7,7 @@ import paypal from "../images/paypal-logo-png-2117.png";
 
 const Landing = () => {
   return (
-    <div className="font-serif h-screen w-screen pt-20 flex flex-col justify-around">
+    <div className="font-serif h-screen w-screen pt-20 mb-20 flex flex-col justify-around">
       <div className="flex flex-col items-center justify-between text-6xl tracking-wide mb-12">
         <span className="font-bold bg-clip-text text-transparent bg-gradient-to-l from-gray-400 to-gray-600">
           Your Ultimate E-commerce Destination
@@ -28,7 +28,7 @@ const Landing = () => {
         {/* <img src={} alt="ecommerce web" className="w-full h-full" /> */}
       </div>
 
-      <div className="h-52 border-l-4 border-violet-600 bg-gradient-to-l from-gray-300 to-gray-900">
+      <div className="h-52 border-l-4 border-violet-600">
         <div className="w-5/6 mx-auto flex justify-around items-center h-full">
           <img className="h-16" src={netflix} alt="netflix" />
           <img className="h-16" src={periscop} alt="periscop" />

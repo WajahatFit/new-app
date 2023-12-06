@@ -9,6 +9,7 @@ import Checkout from "./pages/Checkout";
 import "./App.css";
 import Login from "../src/pages/auth/Login";
 import Signup from "./pages/auth/Signup";
+import ProductDetails from "./pages/ProductDetails";
 
 const App = () => {
   return (
@@ -24,6 +25,7 @@ const App = () => {
           <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login />} />
           <Route path="/shop" element={<Shop />} />
+          <Route path="/details" element={<ProductDetails />} />
         </Routes>
         <Footer />
       </BrowserRouter>
