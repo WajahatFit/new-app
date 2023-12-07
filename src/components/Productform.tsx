@@ -28,7 +28,6 @@ const [createProduct, { loading, error }] = useMutation(CREATE_PRODUCT);
     setDescription('');
   };
 
-const Product = () => {
   return (
     <div>
       <h2>Create a New Product</h2>
