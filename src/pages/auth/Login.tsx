@@ -1,8 +1,29 @@
 import { NavLink } from "react-router-dom";
-import React, { useEffect } from "react";
-import axios from "axios";
+import { useMutation } from "@apollo/client";
+import { useState } from "react";
+import { LOG_IN } from "../../graphql/mutations";
 
 const Login: React.FC = () => {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('')
+
+  const [logIn, {loading, error}] = useMutation(LOG_IN)
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    logIn({
+      variables: {
+        username,
+        password
+      }
+    });
+
+    setUsername('');
+    setPassword('');
+  }
+
+
   return (
     <>
       <section className="bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-purple-900 to-indigo-500">
@@ -20,20 +41,22 @@ const Login: React.FC = () => {
               <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
                 Sign in to your account
               </h1>
-              <form className="space-y-4 md:space-y-6" action="#">
+              <form className="space-y-4 md:space-y-6" onSubmit={handleSubmit}>
                 <div>
                   <label
                     htmlFor="email"
                     className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                   >
-                    Your email
+                    Your Username
                   </label>
                   <input
-                    type="email"
-                    name="email"
-                    id="email"
+                    type="text"
+                    name="username"
+                    id="username"
                     className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                    placeholder="name@company.com"
+                    placeholder="username"
+                    value={username}
+                    onChange={e => setUsername(e.target.value)}
                     required
                   />
                 </div>
@@ -50,6 +73,7 @@ const Login: React.FC = () => {
                     id="password"
                     placeholder="••••••••"
                     className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    onChange= {e => setPassword(e.target.value)}
                     required
                   />
                 </div>
