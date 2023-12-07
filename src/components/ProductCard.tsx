@@ -1,10 +1,20 @@
-import React from "react";
-import productImg from "../images/netflix-logo-png-2562.png";
+import { NavLink } from "react-router-dom";
 
-export default function ProductCard() {
+export default function ProductCard(props: any) {
   return (
-    <div className="h-32 w-24 border mx-auto">
-      <img src={productImg} alt="product-img" className="object-contain" />
+    <div className="flex flex-col h-96 w-96 p-4">
+      <NavLink to="/details">
+        <img
+          src={props.img}
+          alt="product-img"
+          className="h-80 w-96 p-4 border-2 border-violet-400 mx-auto object-cover rounded-xl"
+        />
+
+        <div className="flex justify-between p-2 text-lg">
+          <h3 className="font-bold">{props.title}</h3>
+          <span>{props.price}$</span>
+        </div>
+      </NavLink>
     </div>
   );
 }
