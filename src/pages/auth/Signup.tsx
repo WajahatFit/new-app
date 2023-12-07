@@ -1,6 +1,33 @@
 import { NavLink } from "react-router-dom";
+import React , {useState} from 'react'
+import {CREATE_USER} from '../../graphql/mutations'
+import { useMutation } from "@apollo/client";
+
 
 const Signup = () => {
+  
+  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('');
+
+
+  const [createUser, {loading, error}] = useMutation(CREATE_USER);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    createUser({
+      variables:{
+        username,
+        email,
+        password
+      }
+    })
+
+
+  }
+  
+  
   return (
     <>
       <section className="bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-purple-900 to-indigo-500">
