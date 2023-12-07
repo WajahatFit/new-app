@@ -52,12 +52,9 @@ export const LOG_IN = gql`
 export const CREATE_USER = gql`
 mutation createUserInput($input: CreateUserInput){
   createUser(input: $input){
-    user{
       username
       password
       email
-    }
-
   }
 }`
 
