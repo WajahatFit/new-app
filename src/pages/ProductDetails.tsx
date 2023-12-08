@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 export default function ProductDetails() {
   return (
@@ -25,8 +26,9 @@ export default function ProductDetails() {
 
           <div className="flex items-start gap-12 w-full text-2xl">
             <button className="w-2/5 pointer p-4 bg-gray-900 text-white">
-              Add to Cart
+              <NavLink to="/checkout">Add to Cart </NavLink>
             </button>
+
             <button className="w-2/5 pointer p-4 bg-sky-500 text-white">
               Buy Now
             </button>
