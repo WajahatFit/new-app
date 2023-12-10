@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { useMutation } from "@apollo/client";
 import { useState } from "react";
 import { LOG_IN } from "../../graphql/mutations";
@@ -9,18 +9,24 @@ const Login: React.FC = () => {
 
   const [logIn, {loading, error}] = useMutation(LOG_IN)
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    try{
 
-    logIn({
-      variables: {
-        username,
-        password
-      }
-    });
-
-    setUsername('');
-    setPassword('');
+      const {data} = await logIn({
+        variables: {
+          username,
+          password
+        }
+      });
+  
+      setUsername('');
+      setPassword('');
+    }
+    catch(error){
+      console.error('Error in Connecting :', error)
+    }
   }
 
 

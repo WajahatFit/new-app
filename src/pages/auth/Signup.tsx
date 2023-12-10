@@ -12,7 +12,7 @@ const Signup = () => {
   const navigate = useNavigate();
 
 
-  const [createUser, {error}] = useMutation(CREATE_USER);
+  const [createUser] = useMutation(CREATE_USER);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
