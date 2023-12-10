@@ -8,6 +8,7 @@ const Login: React.FC = () => {
   const [password, setPassword] = useState('')
 
   const [logIn, {loading, error}] = useMutation(LOG_IN)
+  const navigate = useNavigate();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -22,7 +23,9 @@ const Login: React.FC = () => {
           }
         }
       });
-  
+      
+      console.log("this is the login data", data.input.auth)
+      
       setUsername('');
       setPassword('');
     }
