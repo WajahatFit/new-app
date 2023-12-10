@@ -16,8 +16,10 @@ const Login: React.FC = () => {
 
       const {data} = await logIn({
         variables: {
-          username,
-          password
+          input: {
+            username,
+            password
+          }
         }
       });
   
