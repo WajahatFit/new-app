@@ -30,8 +30,8 @@ const Signup = () => {
       }
     })
     console.log("this is the data resp from CreateUser ", data)
-    if(data && data.createUser.user){
-      navigate('./Login.tsx')
+    if(data && data.createUser.username){
+      navigate('/login')
     }
 
     setUsername('');

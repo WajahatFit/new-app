@@ -24,8 +24,8 @@ const Login: React.FC = () => {
         }
       });
       
-      console.log("this is the login data", data.input.auth)
-      
+      console.log("this is the login data", data.input.authPayload)
+
       setUsername('');
       setPassword('');
     }
