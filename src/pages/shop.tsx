@@ -1,8 +1,39 @@
 import ProductCard from "../components/ProductCard";
 import data from "../data/data";
+import { useQuery } from "@apollo/client";
+import {GET_PRODUCTS} from '../graphql/mutations'
+import {useEffect} from 'react'
 
 const Shop = () => {
-  const product = data.map((item) => {
+  
+  const {data, loading, error} =  useQuery(GET_PRODUCTS);
+
+  if(error){
+    console.error('Error while fetching products: ', error);
+    throw new Error ('Error Fetching Products');
+  }
+
+  console.log("this is the response:", data)
+  const products = data?.products;
+  console.log("this are the products", products)
+
+
+  useEffect( () => {
+    
+
+    try{
+
+
+    }
+    catch(error){
+      console.error(error);
+      throw new Error('Product List Fetching failed: ')
+    }
+
+  },[]);
+
+
+  const product = data.map((item: { id: any; title: any; image: any; price: any; }) => {
     return (
       <ProductCard
         key={item.id}

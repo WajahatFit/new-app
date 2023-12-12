@@ -12,16 +12,6 @@ export const CREATE_PRODUCT = gql`
   }
 `;
 
-// export const CREATE_USER = gql`
-//   mutation CreateProduct($name: String!, $price: Float!, $description: String) {
-//     createProduct(name: $name, price: $price, description: $description) {
-//       id
-//       name
-//       price
-//       description
-//     }
-//   }
-// `;
 
 export const GET_PRODUCTS = gql`
   query GetProducts {
@@ -30,6 +20,7 @@ export const GET_PRODUCTS = gql`
       name
       price
       description
+      image
     }
   }
 
