@@ -13,10 +13,11 @@ const Shop = () => {
     throw new Error ('Error Fetching Products');
   }
 
+  // this is the query
   const products = data?.products;
   console.log("this are the products", products)
 
-
+  // useEffect to dispaly the query
   useEffect( () => {
   
     if(products){
