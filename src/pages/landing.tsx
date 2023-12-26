@@ -18,7 +18,7 @@ const Landing = () => {
             immersive shopping experience tailored to your needs.
           </p>
         </div>
-        <NavLink to="/products">
+        <NavLink to="/shop">
           <button className="border-t-4 border-violet-600 w-64 p-4 text-xl text-gray-400 hover:text-black hover:bg-gray-300 hover:font-bold">
             Shop Now
           </button>
