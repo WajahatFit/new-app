@@ -5,45 +5,47 @@ import { LOG_IN } from "../../graphql/mutations";
 import Cookies from "js-cookie";
 
 const Login: React.FC = () => {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('')
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
 
-  const [logIn] = useMutation(LOG_IN)
+  const [logIn] = useMutation(LOG_IN);
   const navigate = useNavigate();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
-    try{
 
-      console.log(username, password)
+    try {
+      console.log(username, password);
 
-      const {data} = await logIn({
+      const { data } = await logIn({
         variables: {
           input: {
             username,
-            password
-          }
-        }
+            password,
+          },
+        },
       });
-      
-      console.log("this is the login data", data.logIn)
+
+      console.log("this is the login data", data.logIn);
       const token = data.logIn.token;
-      console.log('this is the cookie: ', token)
+      console.log("this is the cookie: ", token);
 
       // Secure and HTTPONLY FALSE ONLY IN DEV MODE, REMEMBER TO TURN TRUE!!!
-      Cookies.set('authToken', token, {expires: 1, secure: false, sameSite: 'Strict', httpOnly: false});
+      Cookies.set("authToken", token, {
+        expires: 1,
+        secure: false,
+        sameSite: "Strict",
+        httpOnly: false,
+      });
 
-      setUsername('');
-      setPassword('');
+      setUsername("");
+      setPassword("");
 
-      navigate('/shop');
+      navigate("/shop");
+    } catch (error) {
+      console.error("Error in Connecting :", error);
     }
-    catch(error){
-      console.error('Error in Connecting :', error)
-    }
-  }
-
+  };
 
   return (
     <>
@@ -77,7 +79,7 @@ const Login: React.FC = () => {
                     className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     placeholder="username"
                     value={username}
-                    onChange={e => setUsername(e.target.value)}
+                    onChange={(e) => setUsername(e.target.value)}
                     required
                   />
                 </div>
@@ -94,7 +96,7 @@ const Login: React.FC = () => {
                     id="password"
                     placeholder="••••••••"
                     className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                    onChange= {e => setPassword(e.target.value)}
+                    onChange={(e) => setPassword(e.target.value)}
                     required
                   />
                 </div>
@@ -125,12 +127,12 @@ const Login: React.FC = () => {
                     Forgot password?
                   </a>
                 </div>
-                  <button
-                    type="submit"
-                    className="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
-                  >
-                    Sign in
-                  </button>
+                <button
+                  type="submit"
+                  className="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+                >
+                  Sign in
+                </button>
                 <p className="text-sm font-light text-gray-500 dark:text-gray-400">
                   Don’t have an account yet?{" "}
                   <NavLink to="/signup">
