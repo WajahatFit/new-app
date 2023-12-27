@@ -2,10 +2,11 @@ import ProductCard from "../components/ProductCard";
 // import data from "../data/data";
 import { useQuery } from "@apollo/client";
 import { GET_PRODUCTS } from "../graphql/mutations";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const Shop = () => {
   const { data, error } = useQuery(GET_PRODUCTS);
+  const [productsList, setProductsList] = useState([]);
 
   if (error) {
     console.error("Error while fetching products: ", error);
@@ -19,18 +20,7 @@ const Shop = () => {
   // useEffect to dispaly the query
   useEffect(() => {
     if (products) {
-      products.map((item: any) => {
-        console.log(item);
-        return (
-          <ProductCard
-            key={item.id}
-            name={item.name}
-            description={item.description}
-            // image={`../images/${item.image}`}
-            price={item.price}
-          />
-        );
-      });
+      setProductsList(products);
     }
   }, [data, error]);
 
@@ -54,8 +44,20 @@ const Shop = () => {
             <option value="price">Price</option>
           </select>
         </div>
-        <div className="flex flex-wrap justify-between">
-          {/* {product ? product : <h1>No products available from Db</h1>} */}
+        <div className="flex flex-wrap justify-between gap-8">
+          {productsList &&
+            productsList.map((item: any) => {
+              console.log(item);
+              return (
+                <ProductCard
+                  key={item.id}
+                  name={item.name}
+                  description={item.description}
+                  // image={`../images/${item.image}`}
+                  price={item.price}
+                />
+              );
+            })}
         </div>
       </div>
     </div>
