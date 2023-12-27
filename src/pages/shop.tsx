@@ -1,28 +1,26 @@
 import ProductCard from "../components/ProductCard";
 // import data from "../data/data";
 import { useQuery } from "@apollo/client";
-import {GET_PRODUCTS} from '../graphql/mutations'
-import {useEffect} from 'react'
+import { GET_PRODUCTS } from "../graphql/mutations";
+import { useEffect } from "react";
 
 const Shop = () => {
-  
-  const {data, error} =  useQuery(GET_PRODUCTS);
+  const { data, error } = useQuery(GET_PRODUCTS);
 
-  if(error){
-    console.error('Error while fetching products: ', error);
-    throw new Error ('Error Fetching Products');
+  if (error) {
+    console.error("Error while fetching products: ", error);
+    throw new Error("Error Fetching Products");
   }
 
   // this is the query
   const products = data?.products;
-  console.log("this are the products", products)
+  console.log("this are the products", products);
 
   // useEffect to dispaly the query
-  useEffect( () => {
-  
-    if(products){
+  useEffect(() => {
+    if (products) {
       products.map((item: any) => {
-        console.log(item)
+        console.log(item);
         return (
           <ProductCard
             key={item.id}
@@ -34,11 +32,7 @@ const Shop = () => {
         );
       });
     }
-
-  },[data, error]);
-
-
-
+  }, [data, error]);
 
   return (
     <div className="flex flex-col items-start font-sans bg-[conic-gradient(at_top,_var(--tw-gradient-stops))] from-gray-900 via-gray-100 to-gray-900">

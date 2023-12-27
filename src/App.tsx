@@ -1,8 +1,8 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Shop from "./pages/shop";
-import Navbar from "./components/navbar";
-import Landing from "./pages/landing";
-import Footer from "./components/footer";
+import Shop from "./pages/Shop";
+import Navbar from "./components/Navbar";
+import Landing from "./pages/Landing";
+import Footer from "./components/Footer";
 import Profile from "./pages/Profile";
 import About from "./pages/About";
 import Checkout from "./pages/Checkout";
