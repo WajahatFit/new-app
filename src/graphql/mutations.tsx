@@ -12,6 +12,7 @@ export const CREATE_PRODUCT = gql`
   }
 `;
 
+
 export const GET_PRODUCTS = gql`
   query GetProducts {
     products {
@@ -19,10 +20,34 @@ export const GET_PRODUCTS = gql`
       name
       price
       description
+      image
+    }
+  }
+
+  
+  `;
+export const LOG_IN = gql`
+  mutation logIn($input: LogInInput){
+    logIn(input: $input){
+        token
+        user{
+            username
+            password
+            email
+        }
     }
   }
 
 `;
+
+export const CREATE_USER = gql`
+mutation createUserInput($input: CreateUserInput){
+  createUser(input: $input){
+      username
+      password
+      email
+  }
+}`
 
 // export const getUser = gql`
 //   query getNumber1 {

@@ -2,7 +2,9 @@ import React, { useState } from "react";
 import { CREATE_PRODUCT } from "../graphql/mutations";
 import { useMutation } from "@apollo/client";
 
+
 const ProductForm = () => {
+
   const [name, setName] = useState("");
   const [price, setPrice] = useState(0);
   const [description, setDescription] = useState("");
@@ -26,7 +28,7 @@ const ProductForm = () => {
     setDescription("");
   };
 
-  const Product = () => {
+
     return (
       <div>
         <h2>Create a New Product</h2>
@@ -88,6 +90,6 @@ const ProductForm = () => {
       </div>
     );
   };
-};
+
 
 export default ProductForm;

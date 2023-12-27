@@ -1,17 +1,44 @@
 import ProductCard from "../components/ProductCard";
-import data from "../data/data";
+// import data from "../data/data";
+import { useQuery } from "@apollo/client";
+import {GET_PRODUCTS} from '../graphql/mutations'
+import {useEffect} from 'react'
 
 const Shop = () => {
-  const product = data.map((item) => {
-    return (
-      <ProductCard
-        key={item.id}
-        title={item.title}
-        image={`../images/${item.image}`}
-        price={item.price}
-      />
-    );
-  });
+  
+  const {data, error} =  useQuery(GET_PRODUCTS);
+
+  if(error){
+    console.error('Error while fetching products: ', error);
+    throw new Error ('Error Fetching Products');
+  }
+
+  // this is the query
+  const products = data?.products;
+  console.log("this are the products", products)
+
+  // useEffect to dispaly the query
+  useEffect( () => {
+  
+    if(products){
+      products.map((item: any) => {
+        console.log(item)
+        return (
+          <ProductCard
+            key={item.id}
+            name={item.name}
+            description={item.description}
+            // image={`../images/${item.image}`}
+            price={item.price}
+          />
+        );
+      });
+    }
+
+  },[data, error]);
+
+
+
 
   return (
     <div className="flex flex-col items-start font-sans bg-[conic-gradient(at_top,_var(--tw-gradient-stops))] from-gray-900 via-gray-100 to-gray-900">
@@ -34,7 +61,7 @@ const Shop = () => {
           </select>
         </div>
         <div className="flex flex-wrap justify-between">
-          {product ? product : <h1>No products available from Db</h1>}
+          {/* {product ? product : <h1>No products available from Db</h1>} */}
         </div>
       </div>
     </div>

@@ -1,9 +1,16 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+<<<<<<< HEAD
 import Shop from "./pages/Shop";
 import Navbar from "./components/Navbar";
 import ErrorPage from "./pages/ErrorPage";
 import Landing from "./pages/Landing";
 import Footer from "./components/Footer";
+=======
+import Shop from "./pages/shop";
+import Navbar from "./components/navbar";
+import Landing from "./pages/landing";
+import Footer from "./components/footer";
+>>>>>>> 79b2438dec7ead02696fa2b7875df610ca66c5a4
 import Profile from "./pages/Profile";
 import About from "./pages/About";
 import Checkout from "./pages/Checkout";
