@@ -10,14 +10,7 @@ const Shop = () => {
   const [productsList, setProductsList] = useState([]);
   const searchInput = useRef<HTMLInputElement>(null)
 
-  const handleSearch = () => {
-    if(searchInput.current){
-      const searchTerm = searchInput.current?.value.toLowerCase() || "";
 
-      const filteredProductList = productsList.filter(item => item.name.toLowerCase().includes(searchTerm));
-      setProductsList(filteredProductList || [])
-    }
-  }
 
   if (error) {
     console.error("Error while fetching products: ", error);
@@ -34,6 +27,16 @@ const Shop = () => {
       setProductsList(products);
     }
   }, [data, error]);
+
+
+  const handleSearch = () => {
+    if(searchInput.current){
+      const searchTerm = searchInput.current?.value.toLowerCase() || "";
+
+      const filteredProductList = productsList.filter( (item : {name: string}) => item.name.toLowerCase().includes(searchTerm));
+      setProductsList(filteredProductList || [])
+    }
+  }
 
   return (
     <div className="flex flex-col items-start font-sans bg-[conic-gradient(at_top,_var(--tw-gradient-stops))] from-gray-900 via-gray-100 to-gray-900">
