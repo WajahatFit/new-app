@@ -26,7 +26,7 @@ const Shop = () => {
 
   // this is the query
   const products = data?.products;
-  console.log("this are the products", products);
+  //console.log("this are the products", products);
 
   // useEffect to dispaly the query
   useEffect(() => {
@@ -37,12 +37,22 @@ const Shop = () => {
 
 
   const handleSearch = () => {
-    if(searchInput.current){
-      const searchTerm = searchInput.current?.value.toLowerCase() || "";
+    
+    if(searchInput?.current?.value === ""){
+      //console.log("why is not setting this back")
+        setProductsList(products)
+        return
+    }
 
+    else if(searchInput.current) {
+      //console.log("searching for item: ", searchInput.current?.value)
+
+      const searchTerm = searchInput.current?.value.toLowerCase() || "";
+      
       const filteredProductList = productsList.filter( (item : Product) => item.name.toLowerCase().includes(searchTerm));
       setProductsList(filteredProductList || [])
-    }
+  }
+   
   }
 
   const handleSort = () => {
