@@ -8,12 +8,14 @@ const Shop = () => {
   
   const {data, error} =  useQuery(GET_PRODUCTS);
   const [productsList, setProductsList] = useState([]);
-  const searchInput = useRef("")
+  const searchInput = useRef<HTMLInputElement>(null)
 
-  const Search = () => {
+  const handleSearch = () => {
     if(searchInput.current){
-      const filteredProductList = productsList.filter(item => item.name!== searchInput.current)
-      setProductsList(filteredProductList)
+      const searchTerm = searchInput.current?.value.toLowerCase() || "";
+
+      const filteredProductList = productsList.filter(item => item.name.toLowerCase().includes(searchTerm));
+      setProductsList(filteredProductList || [])
     }
   }
 
@@ -53,6 +55,22 @@ const Shop = () => {
             <option value="price">Price</option>
           </select>
         </div>
+
+        <div className="flex items-center justify-between border-4 border-violet-600 h-16 w-full mx-4">
+          <input
+            type="text"
+            ref={searchInput}
+            placeholder="Search by product name..."
+            className="text-lg px-2 w-2/3 h-full focus:outline-none"
+          />
+          <button
+            onClick={handleSearch}
+            className="bg-blue-500 text-white px-4 py-2 rounded-md"
+          >
+            Search
+          </button>
+        </div>
+
         <div className="flex flex-wrap justify-between gap-8">
           {productsList &&
             productsList.map((item: any) => {
