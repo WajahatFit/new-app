@@ -1,10 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Shop from "./pages/Shop";
 import Navbar from "./components/Navbar";
-<<<<<<< HEAD
-=======
-import ErrorPage from "./pages/ErrorPage";
->>>>>>> wajahat
 import Landing from "./pages/Landing";
 import Footer from "./components/Footer";
 import Profile from "./pages/Profile";
@@ -36,7 +32,7 @@ const App = () => {
           <Route path="/details" element={<ProductDetails />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/payment" element={<Payment />} />
-          <Route path="*" element={<ErrorPage />} />
+          {/* <Route path="*" element={<ErrorPage />} /> */}
         </Routes>
         <Footer />
       </BrowserRouter>
