@@ -2,11 +2,20 @@ import ProductCard from "../components/ProductCard";
 // import data from "../data/data";
 import { useQuery } from "@apollo/client";
 import {GET_PRODUCTS} from '../graphql/mutations'
-import {useEffect} from 'react'
+import {useEffect, useRef, useState} from 'react'
 
 const Shop = () => {
   
   const {data, error} =  useQuery(GET_PRODUCTS);
+  const [productsList, setProductList] = useState
+  const searchInput = useRef("")
+
+  const Search = () => {
+    if(searchInput.current){
+      const filteredProductList = productsList.filter(item => item.name!== searchInput.current)
+      setProductList(filteredProductList)
+    }
+  }
 
   if(error){
     console.error('Error while fetching products: ', error);
@@ -21,9 +30,10 @@ const Shop = () => {
   useEffect( () => {
   
     if(products){
-      products.map((item: any) => {
+      products?.map((item: any) => {
         console.log(item)
         return (
+          
           <ProductCard
             key={item.id}
             name={item.name}
@@ -31,6 +41,8 @@ const Shop = () => {
             // image={`../images/${item.image}`}
             price={item.price}
           />
+
+
         );
       });
     }
@@ -61,7 +73,7 @@ const Shop = () => {
           </select>
         </div>
         <div className="flex flex-wrap justify-between">
-          {/* {product ? product : <h1>No products available from Db</h1>} */}
+           {products ? products : <h1>No products available from Db</h1>}
         </div>
       </div>
     </div>
