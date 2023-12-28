@@ -8,9 +8,16 @@ const Shop = () => {
   
   const {data, error} =  useQuery(GET_PRODUCTS);
   const [productsList, setProductsList] = useState([]);
-  const searchInput = useRef<HTMLInputElement>(null)
+  const searchInput = useRef<HTMLInputElement>(null);
+  const sortOptionRef = useRef<HTMLSelectElement>(null);
 
-
+  // ts types 
+  type Product = {
+    id: string;
+    name: string;
+    description: string;
+    price: number;
+  }
 
   if (error) {
     console.error("Error while fetching products: ", error);
@@ -33,8 +40,22 @@ const Shop = () => {
     if(searchInput.current){
       const searchTerm = searchInput.current?.value.toLowerCase() || "";
 
-      const filteredProductList = productsList.filter( (item : {name: string}) => item.name.toLowerCase().includes(searchTerm));
+      const filteredProductList = productsList.filter( (item : Product) => item.name.toLowerCase().includes(searchTerm));
       setProductsList(filteredProductList || [])
+    }
+  }
+
+  const handleSort = () => {
+    const sortOption = sortOptionRef?.current?.value;
+
+    if(sortOption){
+      const sortedProductList = [...productsList].sort((a: Product, b: Product) => {
+        if(sortOption === "price"){
+          return a.price - b.price;
+        }
+        return 0;
+      })
+      setProductsList(sortedProductList);
     }
   }
 
@@ -54,7 +75,11 @@ const Shop = () => {
             Sort By
           </label>
 
-          <select id="sort" className="text-lg font-bold">
+          <select 
+          id="sort" 
+          ref= {sortOptionRef}
+          onChange={handleSort}
+          className="text-lg font-bold">
             <option value="price">Price</option>
           </select>
         </div>
