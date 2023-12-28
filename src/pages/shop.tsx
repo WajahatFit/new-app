@@ -60,9 +60,17 @@ const Shop = () => {
 
     if(sortOption){
       const sortedProductList = [...productsList].sort((a: Product, b: Product) => {
-        if(sortOption === "price"){
-          return a.price - b.price;
+        switch (sortOption) {
+          case "price_descending":
+            return a.price - b.price
+          case "price_ascending" :
+            return b.price - a.price
+          case  "name": 
+            return a.name.localeCompare(b.name)
+          default:
+            break;
         }
+        
         return 0;
       })
       setProductsList(sortedProductList);
@@ -90,7 +98,9 @@ const Shop = () => {
           ref= {sortOptionRef}
           onChange={handleSort}
           className="text-lg font-bold">
-            <option value="price">Price</option>
+            <option value="price_descending">Hight to Low </option>
+            <option value="price_ascending">Low to High</option>
+            <option value="name">Name</option>
           </select>
         </div>
 
