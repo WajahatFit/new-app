@@ -1,9 +1,12 @@
-import React from "react";
+import pedia from "../images/tokopedia-38859.jpg";
+import netflix from "../images/netflix-logo-png-2562.png";
+import periscop from "../images/periscope-logo-png-1964.png";
+import paypal from "../images/paypal-logo-png-2117.png";
 import { NavLink } from "react-router-dom";
 
 const AboutPage = () => {
   return (
-    <div className="items-center pt-8 tracking-wide bg-gradient-to-b from-gray-900 to-gray-600 bg-gradient-to-r h-screen ">
+    <div className="items-center pt-8 tracking-wide bg-gradient-to-b from-gray-900 to-gray-600 bg-gradient-to-r">
       <div className="bg-gradient-to-b from-gray-900 to-gray-600 bg-gradient-to-r h-full rounded-md flex flex-col justify-between items-center space-y-12 pb-12">
         <h1 className="font-bold text-4xl bg-clip-text text-transparent bg-gradient-to-l from-gray-100 to-gray-400 text-center">
           About Us
@@ -33,6 +36,18 @@ const AboutPage = () => {
             Shop All
           </button>
         </NavLink>
+      </div>
+      <div className="h-64 border-l-4 border-violet-600">
+        <div className="w-5/6 mx-auto flex justify-around items-center h-full">
+          <img className="h-16" src={netflix} alt="netflix" />
+          <img className="h-16" src={periscop} alt="periscop" />
+          <img className="h-24" src={paypal} alt="paypal" />
+          <img
+            className="h-28 mix-blend-multiply"
+            src={pedia}
+            alt="takopedia"
+          />
+        </div>
       </div>
     </div>
   );
