@@ -12,12 +12,12 @@ const Signup = () => {
   const navigate = useNavigate();
 
 
-  const [createUser] = useMutation(CREATE_USER);
+  const [createUser ] = useMutation(CREATE_USER);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    console.log(username, email, password)
+    //console.log(username, email, password)
 
     try{
       const {data} = await createUser({

@@ -1,7 +1,10 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Shop from "./pages/Shop";
 import Navbar from "./components/Navbar";
+<<<<<<< HEAD
 import ErrorPage from "./pages/ErrorPage";
+=======
+>>>>>>> f0757102ccbeabb2b639d3ffb199ba707197ee6a
 import Landing from "./pages/Landing";
 import Footer from "./components/Footer";
 import Profile from "./pages/Profile";
@@ -34,8 +37,12 @@ const App = () => {
           <Route path="/details" element={<ProductDetails />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/payment" element={<Payment />} />
+<<<<<<< HEAD
           <Route path="/createProduct" element={<CreateProduct />} />
           <Route path="*" element={<ErrorPage />} />
+=======
+          {/* <Route path="*" element={<ErrorPage />} /> */}
+>>>>>>> f0757102ccbeabb2b639d3ffb199ba707197ee6a
         </Routes>
         <Footer />
       </BrowserRouter>
