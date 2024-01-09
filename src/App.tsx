@@ -1,10 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Shop from "./pages/Shop";
 import Navbar from "./components/Navbar";
-<<<<<<< HEAD
-=======
 import ErrorPage from "./pages/ErrorPage";
->>>>>>> wajahat
 import Landing from "./pages/Landing";
 import Footer from "./components/Footer";
 import Profile from "./pages/Profile";
@@ -17,6 +14,7 @@ import ProductDetails from "./pages/ProductDetails";
 import Cart from "./pages/Cart";
 import Payment from "./pages/Payment";
 import Contact from "./pages/Contact";
+import CreateProduct from "./components/CreateProduct";
 
 const App = () => {
   return (
@@ -25,7 +23,7 @@ const App = () => {
         <Navbar />
 
         <Routes>
-          <Route path="/Home" element={<Landing />} />
+          <Route path="/" element={<Landing />} />
           <Route path="/about" element={<About />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/cart" element={<Cart />} />
@@ -36,6 +34,7 @@ const App = () => {
           <Route path="/details" element={<ProductDetails />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/payment" element={<Payment />} />
+          <Route path="/createProduct" element={<CreateProduct />} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
         <Footer />

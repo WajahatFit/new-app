@@ -25,7 +25,7 @@ const Shop = () => {
   }, [data, error]);
 
   return (
-    <div className="flex flex-col items-start font-sans bg-[conic-gradient(at_top,_var(--tw-gradient-stops))] from-gray-900 via-gray-100 to-gray-900">
+    <div className="flex flex-col items-start font-sans">
       <div className="text-gray-400 border-2 w-full bg-gray-800 flex flex-col items-start pt-8 pb-8 px-6 space-y-8 justify-around shadow-xl">
         <h3 className="text-4xl font-bold tracking-wide">Explore Excellence</h3>
         <p className="text-xl w-2/4">
@@ -44,7 +44,7 @@ const Shop = () => {
             <option value="price">Price</option>
           </select>
         </div>
-        <div className="flex flex-wrap justify-between gap-8">
+        <div className="flex flex-wrap justify-between gap-8 pt-8">
           {productsList &&
             productsList.map((item: any) => {
               console.log(item);
