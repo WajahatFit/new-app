@@ -7,7 +7,7 @@ import paypal from "../images/paypal-logo-png-2117.png";
 
 const Landing = () => {
   return (
-    <div className="font-serif h-screen w-screen pt-20 mb-20 flex flex-col justify-around">
+    <div className="font-serif h-full w-screen pt-20 mb-20 flex flex-col justify-around">
       <div className="flex flex-col items-center justify-between text-6xl tracking-wide mb-12">
         <span className="font-bold bg-clip-text text-transparent bg-gradient-to-l from-gray-400 to-gray-600">
           Your Ultimate E-commerce Destination
@@ -24,7 +24,7 @@ const Landing = () => {
           </button>
         </NavLink>
       </div>
-      <div className="w-5/6 mx-auto h-3/4 border-r-4 border-violet-600 bg-gradient-to-r from-gray-700 via-gray-900 to-black mb-8">
+      <div className="w-5/6 mx-auto h-56 border-r-4 border-violet-600 bg-gradient-to-r from-gray-700 via-gray-900 to-black mb-8">
         {/* <img src={} alt="ecommerce web" className="w-full h-full" /> */}
       </div>
 
