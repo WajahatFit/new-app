@@ -12,7 +12,7 @@ const Navbar = () => {
                 ? "text-violet-500 font-bold text-xl"
                 : "text-slate-300 text-xl hover:text-white"
             }
-            to="/home"
+            to="/"
           >
             Home
           </NavLink>
