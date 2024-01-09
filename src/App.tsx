@@ -18,7 +18,7 @@ import CreateProduct from "./components/CreateProduct";
 
 const App = () => {
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col h-screen">
       <BrowserRouter>
         <Navbar />
 
