@@ -4,7 +4,7 @@ import ProductCart from "../components/ProductCart";
 
 export default function Cart() {
   return (
-    <div className="h-screen w-5/6 mx-auto mt-14 mb-14 font-serif">
+    <div className="w-5/6 mx-auto mt-14 font-serif">
       <div className="mt-4 mb-4 h-7/8">
         <div className="flex flex-col space-y-8">
           <h1 className="text-5xl bg-clip-text text-transparent bg-gradient-to-l from-gray-400 to-gray-600 font-bold">
@@ -44,16 +44,6 @@ export default function Cart() {
               </NavLink>
             </div>
           </div>
-        </div>
-        <div className="w-1/2 bottom-0 mt-8 space-y-6">
-          <h2 className="w-full text-4xl font-bold border-b-2 border-black pb-4 ">
-            Order Information
-          </h2>
-          <p className="text-xl text-gray-400 pt-4">Return Policy</p>
-          <p className="text-xl text-gray-400">
-            This is our return policy so you better read it before purchasing
-            any product from our online stores.
-          </p>
         </div>
       </div>
     </div>
